@@ -14,11 +14,14 @@ fn main() {
 }
 
 fn countdown(time: usize) {
+    let minutes = Duration::new(1, 0);
     for i in 0..time {
         let remaining_time : usize = time-i;
-        print!("{remaining_time} minutes remaining {} \r", "▉".repeat(time-i));
-        let minutes = Duration::new(60, 0);
+        let thing : usize = (((remaining_time as f64/time as f64)*100.0)/10.0) as usize;
+        let thing2 : &str = &"|".repeat(thing);
+        print!("{remaining_time} minutes remaining! {}\r", thing2);
         let _ = std::io::stdout().flush();
         thread::sleep(minutes);
     }
+
 }

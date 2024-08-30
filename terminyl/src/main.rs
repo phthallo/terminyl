@@ -17,7 +17,7 @@ fn main() {
 }
 
 fn countdown(time: usize) {
-    let minutes = Duration::new(1, 0);
+    let minutes = Duration::new(60, 0);
     for i in 0..time+1 {
         let remaining_time : usize = time-i;
         let thing : usize = ((((remaining_time as f64/time as f64)*100.0)/10.0)) as usize;
